@@ -19,8 +19,26 @@
     }
   </style>
 </head>
+<meta name="theme-color" content="#111827" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="JP Study" />
+
+<link rel="manifest" href="manifest.json" />
+<link rel="icon" href="icon-192.png" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<!-- </body> 직전에 추가: 서비스워커 등록 -->
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js'); // 루트에 sw.js
+    });
+  }
+</script>
+
 <body>
   <h1>JP Study Pages가 정상적으로 작동합니다 🎉</h1>
   <p>이 페이지가 보이면 GitHub Pages 설정이 완료된 것입니다.</p>
 </body>
 </html>
+
